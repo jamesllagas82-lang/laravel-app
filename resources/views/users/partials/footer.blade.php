@@ -6,7 +6,8 @@
 .footer {
     text-align: center;
     padding: 20px;
-    background: #111;
+    /* background: #111; */
+    background: rgba(17,17,17,0.9);;
     color: white;
     margin-top: 50px;
 }
