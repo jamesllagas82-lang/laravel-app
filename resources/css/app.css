@@ -14,13 +14,15 @@ body {
     padding-top: 70px;
 }
 
+/* NAVBAR */
+/* NAVBAR */
 .navbar {
-    width: 100%;
-    padding: 15px 0;
-    background: #0f172a; /* dark professional color */
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
     z-index: 1000;
 }
 
@@ -40,19 +42,84 @@ body {
     text-decoration: none;
 }
 
+/* DESKTOP */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #38bdf8;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+    display: none;
+}
+
+/* MOBILE DRAWER */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 260px;
+        height: 100vh;
+        background: #0f172a;
+        flex-direction: column;
+        padding: 80px 20px;
+        gap: 20px;
+        transition: 0.3s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.show {
+        right: 0;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    /* OVERLAY ACTIVE */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 900;
+    }
+
+    .overlay.active {
+        display: block;
+    }
 }
